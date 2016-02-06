@@ -34,17 +34,17 @@ class ViewController: UIViewController,LABaseColletionViewDelegate {
     
     func loadData(){
         
-        var  homeData : NSMutableDictionary = [:]
+        let  homeData : NSMutableDictionary = [:]
         
         let db = LASQLite.sharedInstance
         categoryList =  db.categoryListWithLanguageNumber(8)
         
-        var categoryArray :NSMutableArray = []
+        let categoryArray :NSMutableArray = []
 
         
         for (_, item) in categoryList.enumerate(){
             
-            var categoryModel : categoryCellModel = Mapper<categoryCellModel>().map(item)!
+            let categoryModel : categoryCellModel = Mapper<categoryCellModel>().map(item)!
             
             categoryModel.cellIdentifier = "categoryCollectionViewCell"
             categoryModel.cellEdgeInstes = UIEdgeInsetsMake(10, 10, 10, 10)
@@ -62,11 +62,12 @@ class ViewController: UIViewController,LABaseColletionViewDelegate {
     }
     
     func creatUI(){
-//        collection.delegate = self
         collection.delegate = self;
         self.view.addSubview(collection)
 
         collection.LACollectionViewRegisterClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "ViewCell")
+        collection.LACollectionViewRegisterClass(categoryCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "categoryCollectionViewCell")
+
         
     }
 
@@ -82,12 +83,24 @@ class ViewController: UIViewController,LABaseColletionViewDelegate {
         
         let identifier :NSString = model.cellIdentifier!
         
-        let identify:String = "ViewCell"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            identify, forIndexPath: indexPath) as! UICollectionViewCell
+        if identifier.isEqualToString("categoryCollectionViewCell"){
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier as String, forIndexPath: indexPath) as!  categoryCollectionViewCell
+            cell.cellData = model as? categoryCellModel
+            
+            return cell
+            
+        }else{
+            let identify:String = "ViewCell"
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
+                identify, forIndexPath: indexPath) 
+            
+            cell.backgroundColor = UIColor.yellowColor()
+            return cell
+        }
         
-        cell.backgroundColor = UIColor.yellowColor()
-        return cell
+        
+
         
         
     }

@@ -1,13 +1,16 @@
 PODS:
   - ObjectMapper (0.19)
+  - SnapKit (0.19.1)
   - SQLite.swift (0.9.2)
 
 DEPENDENCIES:
   - ObjectMapper (~> 0.12)
+  - SnapKit (~> 0.19.1)
   - SQLite.swift (~> 0.9.2)
 
 SPEC CHECKSUMS:
   ObjectMapper: a88114e5df20f055da63029f25cbc01014847c91
+  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
   SQLite.swift: 5dca22dbf6634fdb9c3270fae9491830804e9b2d
 
 COCOAPODS: 0.38.2
