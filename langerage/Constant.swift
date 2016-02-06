@@ -29,3 +29,12 @@ func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) ->UIColor {
     return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
 }
 
+/**
+*  @author 黄俊杰, 15-07-12 00:07:14
+*
+*  @brief  宏定义Key
+*/
+
+let sessionID = "session_id"
+
+let LACollectionViewReload = "LACollectionViewReloadData"

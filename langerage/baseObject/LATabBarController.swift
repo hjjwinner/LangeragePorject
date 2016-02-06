@@ -15,7 +15,7 @@ class LATabBarController:UITabBarController {
         
     }
     
-    var CBtabBar :UIView = UIView(frame: CGRectMake(0, ScreenHeight - 49, ScreenWidth, 49))
+    var LAtabBar :UIView = UIView(frame: CGRectMake(0, ScreenHeight - 49, ScreenWidth, 49))
     var barImageArray:NSMutableArray = []
     var barLabelArray:NSMutableArray = []
     
@@ -70,12 +70,12 @@ class LATabBarController:UITabBarController {
         self.tabBar.hidden = true;
         self.view.backgroundColor = UIColor.whiteColor()
         
-        CBtabBar.backgroundColor = UIColor.whiteColor()
-        self.view.addSubview(CBtabBar)
+        LAtabBar.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(LAtabBar)
         
         let lineView :UIView = UIView(frame: CGRectMake(0, 0, ScreenWidth, 1))
         lineView.backgroundColor = RGBA(153, g: 153, b: 153, a: 1)
-        CBtabBar.addSubview(lineView)
+        LAtabBar.addSubview(lineView)
         
         let items : NSArray = self.viewControllers!
         
@@ -100,14 +100,14 @@ class LATabBarController:UITabBarController {
             
             let itemWith :Int = Int(ScreenWidth)/items.count
             
-            let itemRect : CGRect = CGRectMake(CGFloat( itemWith * index), CGFloat(0),CGFloat( itemWith), CGFloat(CBtabBar.bounds.height))
+            let itemRect : CGRect = CGRectMake(CGFloat( itemWith * index), CGFloat(0),CGFloat( itemWith), CGFloat(LAtabBar.bounds.height))
             
             
             let barItem = self.barItemCreat(index, imageName: images[index], selectImageName: selectImages[index], titleName: itemName[index], itemFram: itemRect)
             
             barItem.addTarget(self, action:"barItemClick:", forControlEvents: UIControlEvents.TouchUpInside)
             
-            CBtabBar.addSubview(barItem)
+            LAtabBar.addSubview(barItem)
             
         }
         /**

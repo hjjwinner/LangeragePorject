@@ -16,6 +16,15 @@
 		1CFFB8481C65EE05007695D1 /* langerageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFFB8471C65EE05007695D1 /* langerageUITests.swift */; };
 		1CFFB8561C65F183007695D1 /* LATabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFFB8551C65F183007695D1 /* LATabBarController.swift */; };
 		1CFFB8581C65F251007695D1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFFB8571C65F251007695D1 /* Constant.swift */; };
+		1CFFB85E1C66274B007695D1 /* audio.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 1CFFB85A1C66274A007695D1 /* audio.sqlite */; };
+		1CFFB85F1C66274B007695D1 /* lingopal.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CFFB85B1C66274B007695D1 /* lingopal.sqlite3 */; };
+		1CFFB8601C66274B007695D1 /* phonetics.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 1CFFB85C1C66274B007695D1 /* phonetics.sqlite */; };
+		1CFFB8611C66274B007695D1 /* useradded.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 1CFFB85D1C66274B007695D1 /* useradded.sqlite */; };
+		1CFFB8631C662786007695D1 /* DBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFFB8621C662786007695D1 /* DBUtility.swift */; };
+		1CFFB8651C665549007695D1 /* LABaseColletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFFB8641C665549007695D1 /* LABaseColletionView.swift */; };
+		1CFFB8671C6655FB007695D1 /* LACollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFFB8661C6655FB007695D1 /* LACollectionViewCellModel.swift */; };
+		1CFFB8691C666DB1007695D1 /* LACollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFFB8681C666DB1007695D1 /* LACollectionViewCell.swift */; };
+		D223524F9DD2AAFD9F53C685 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6452207FCEC4C1B30E01A7AC /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,17 @@
 		1CFFB8491C65EE05007695D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CFFB8551C65F183007695D1 /* LATabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LATabBarController.swift; path = baseObject/LATabBarController.swift; sourceTree = "<group>"; };
 		1CFFB8571C65F251007695D1 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		1CFFB85A1C66274A007695D1 /* audio.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio.sqlite; sourceTree = "<group>"; };
+		1CFFB85B1C66274B007695D1 /* lingopal.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lingopal.sqlite3; sourceTree = "<group>"; };
+		1CFFB85C1C66274B007695D1 /* phonetics.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = phonetics.sqlite; sourceTree = "<group>"; };
+		1CFFB85D1C66274B007695D1 /* useradded.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = useradded.sqlite; sourceTree = "<group>"; };
+		1CFFB8621C662786007695D1 /* DBUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBUtility.swift; path = baseObject/DBUtility.swift; sourceTree = "<group>"; };
+		1CFFB8641C665549007695D1 /* LABaseColletionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LABaseColletionView.swift; path = baseObject/LABaseColletionView.swift; sourceTree = "<group>"; };
+		1CFFB8661C6655FB007695D1 /* LACollectionViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LACollectionViewCellModel.swift; path = baseObject/LACollectionViewCellModel.swift; sourceTree = "<group>"; };
+		1CFFB8681C666DB1007695D1 /* LACollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LACollectionViewCell.swift; path = baseObject/LACollectionViewCell.swift; sourceTree = "<group>"; };
+		6452207FCEC4C1B30E01A7AC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC96A8A6F57F199A0EDBDD46 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D1577AA7FDB8030A45D0290D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D223524F9DD2AAFD9F53C685 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +106,8 @@
 				1CFFB83B1C65EE05007695D1 /* langerageTests */,
 				1CFFB8461C65EE05007695D1 /* langerageUITests */,
 				1CFFB8251C65EE04007695D1 /* Products */,
+				31FFD29FDEF326A9D67C1EEF /* Pods */,
+				91C72976C54D36544BD2A779 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,11 +127,16 @@
 				1CFFB8271C65EE04007695D1 /* AppDelegate.swift */,
 				1CFFB8291C65EE04007695D1 /* ViewController.swift */,
 				1CFFB8551C65F183007695D1 /* LATabBarController.swift */,
+				1CFFB8641C665549007695D1 /* LABaseColletionView.swift */,
+				1CFFB8681C666DB1007695D1 /* LACollectionViewCell.swift */,
+				1CFFB8661C6655FB007695D1 /* LACollectionViewCellModel.swift */,
 				1CFFB8571C65F251007695D1 /* Constant.swift */,
+				1CFFB8621C662786007695D1 /* DBUtility.swift */,
 				1CFFB82B1C65EE04007695D1 /* Main.storyboard */,
 				1CFFB82E1C65EE04007695D1 /* Assets.xcassets */,
 				1CFFB8301C65EE04007695D1 /* LaunchScreen.storyboard */,
 				1CFFB8331C65EE04007695D1 /* Info.plist */,
+				1CFFB8591C66274A007695D1 /* Resources */,
 			);
 			path = langerage;
 			sourceTree = "<group>";
@@ -131,6 +159,34 @@
 			path = langerageUITests;
 			sourceTree = "<group>";
 		};
+		1CFFB8591C66274A007695D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1CFFB85A1C66274A007695D1 /* audio.sqlite */,
+				1CFFB85B1C66274B007695D1 /* lingopal.sqlite3 */,
+				1CFFB85C1C66274B007695D1 /* phonetics.sqlite */,
+				1CFFB85D1C66274B007695D1 /* useradded.sqlite */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		31FFD29FDEF326A9D67C1EEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1577AA7FDB8030A45D0290D /* Pods.debug.xcconfig */,
+				BC96A8A6F57F199A0EDBDD46 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		91C72976C54D36544BD2A779 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6452207FCEC4C1B30E01A7AC /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CFFB84C1C65EE05007695D1 /* Build configuration list for PBXNativeTarget "langerage" */;
 			buildPhases = (
+				B3232DA4C1E34E4BCFA0FAD9 /* Check Pods Manifest.lock */,
 				1CFFB8201C65EE04007695D1 /* Sources */,
 				1CFFB8211C65EE04007695D1 /* Frameworks */,
 				1CFFB8221C65EE04007695D1 /* Resources */,
+				AF578103F0BC9736DF819B15 /* Embed Pods Frameworks */,
+				02429B09C64651927DCBF3CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,8 +295,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CFFB8321C65EE04007695D1 /* LaunchScreen.storyboard in Resources */,
+				1CFFB85F1C66274B007695D1 /* lingopal.sqlite3 in Resources */,
+				1CFFB8611C66274B007695D1 /* useradded.sqlite in Resources */,
 				1CFFB82F1C65EE04007695D1 /* Assets.xcassets in Resources */,
+				1CFFB85E1C66274B007695D1 /* audio.sqlite in Resources */,
 				1CFFB82D1C65EE04007695D1 /* Main.storyboard in Resources */,
+				1CFFB8601C66274B007695D1 /* phonetics.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +320,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02429B09C64651927DCBF3CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF578103F0BC9736DF819B15 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3232DA4C1E34E4BCFA0FAD9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1CFFB8201C65EE04007695D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1CFFB82A1C65EE04007695D1 /* ViewController.swift in Sources */,
+				1CFFB8691C666DB1007695D1 /* LACollectionViewCell.swift in Sources */,
 				1CFFB8561C65F183007695D1 /* LATabBarController.swift in Sources */,
+				1CFFB8671C6655FB007695D1 /* LACollectionViewCellModel.swift in Sources */,
+				1CFFB8651C665549007695D1 /* LABaseColletionView.swift in Sources */,
+				1CFFB8631C662786007695D1 /* DBUtility.swift in Sources */,
 				1CFFB8281C65EE04007695D1 /* AppDelegate.swift in Sources */,
 				1CFFB8581C65F251007695D1 /* Constant.swift in Sources */,
 			);
@@ -405,6 +520,7 @@
 		};
 		1CFFB84D1C65EE05007695D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1577AA7FDB8030A45D0290D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = langerage/Info.plist;
@@ -416,6 +532,7 @@
 		};
 		1CFFB84E1C65EE05007695D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC96A8A6F57F199A0EDBDD46 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = langerage/Info.plist;
@@ -492,6 +609,7 @@
 				1CFFB84E1C65EE05007695D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CFFB84F1C65EE05007695D1 /* Build configuration list for PBXNativeTarget "langerageTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +618,7 @@
 				1CFFB8511C65EE05007695D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CFFB8521C65EE05007695D1 /* Build configuration list for PBXNativeTarget "langerageUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +627,7 @@
 				1CFFB8541C65EE05007695D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
