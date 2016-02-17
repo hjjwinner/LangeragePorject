@@ -48,7 +48,7 @@ class categoryCollectionViewCell: LACollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.frame = CGRectMake(0, 0, 145*percent, 190*percent)
+        self.frame = CGRectMake(0, 0, 300*percent, 50*percent)
         self.backgroundColor = UIColor.whiteColor()
         self.creatTheUI()
         
@@ -58,7 +58,7 @@ class categoryCollectionViewCell: LACollectionViewCell {
     func creatTheUI(){
         
 
-        self.imageView = UIImageView(frame: CGRectMake(0, 0, 145*percent, 106*percent))
+        self.imageView = UIImageView(frame: CGRectMake(0, 0, 28*percent, 28*percent))
         self.addSubview(self.imageView!)
         
         self.titleLabel = UILabel()
@@ -74,19 +74,21 @@ class categoryCollectionViewCell: LACollectionViewCell {
         
         imageView?.backgroundColor = UIColor.grayColor()
         self.imageView!.snp_makeConstraints{ (make) -> Void in
-            make.width.equalTo(145*percent)
-            make.height.equalTo(106*percent)
+            make.width.equalTo(28*percent)
+            make.height.equalTo(28*percent)
+            make.top.equalTo(10)
+            make.left.equalTo(margin)
             
         }
+        
+        imageView?.image = UIImage(named: (cellData?.cid)!)
         
  
         
         self.titleLabel?.snp_makeConstraints{ (make) -> Void in
-            make.width.equalTo(self.frame.size.width - 24)
-            make.height.equalTo(15)
-            make.top.equalTo(self.imageView!.snp_bottom).offset(speasd)
-            make.left.equalTo(margin)
-            
+            make.height.equalTo(self.frame.size.height)
+            make.top.equalTo(0)
+            make.left.equalTo((self.imageView?.snp_right)!).offset(speasd)
         }
         self.titleLabel?.font = UIFont.systemFontOfSize(12)
         self.titleLabel?.text = cellData?.name

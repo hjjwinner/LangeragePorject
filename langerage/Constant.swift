@@ -12,6 +12,8 @@ import UIKit
 let ScreenWidth = UIScreen.mainScreen().bounds.size.width
 /// 高
 let ScreenHeight  = UIScreen.mainScreen().bounds.size.height
+/// bar高度
+let ScreenTabelBarHeight:CGFloat = 64.0
 /// iphone适配比例
 let percent = UIScreen.mainScreen().bounds.size.width / 320;
 

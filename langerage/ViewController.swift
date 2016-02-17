@@ -9,7 +9,8 @@
 import UIKit
 import ObjectMapper
 
-class ViewController: UIViewController,LABaseColletionViewDelegate {
+
+class ViewController: UIViewController {
     
     var collection :LABaseColletionView = LABaseColletionView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
 
@@ -47,8 +48,8 @@ class ViewController: UIViewController,LABaseColletionViewDelegate {
             let categoryModel : categoryCellModel = Mapper<categoryCellModel>().map(item)!
             
             categoryModel.cellIdentifier = "categoryCollectionViewCell"
-            categoryModel.cellEdgeInstes = UIEdgeInsetsMake(10, 10, 10, 10)
-            categoryModel.cellSize = CGSizeMake(145*percent, 190*percent)
+            categoryModel.cellEdgeInstes = UIEdgeInsetsMake(0, 0, 0, 0)
+            categoryModel.cellSize = CGSizeMake(ScreenWidth-20, 50)
             
             categoryArray.addObject(categoryModel)
 
@@ -72,10 +73,17 @@ class ViewController: UIViewController,LABaseColletionViewDelegate {
     }
 
     
-    var delegate:LABaseColletionViewDelegate?
+//    var delegate:LABaseColletionViewDelegate?
 
     
     
+    
+  
+    
+    
+}
+
+extension ViewController:LABaseColletionViewDelegate{
     
     func LAcollectionView(collectionView: UICollectionView, indexPath: NSIndexPath, data: NSDictionary) -> UICollectionViewCell {
         
@@ -93,23 +101,23 @@ class ViewController: UIViewController,LABaseColletionViewDelegate {
         }else{
             let identify:String = "ViewCell"
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
-                identify, forIndexPath: indexPath) 
+                identify, forIndexPath: indexPath)
             
             cell.backgroundColor = UIColor.yellowColor()
             return cell
         }
         
         
-
+        
         
         
     }
     
     func LAcollectionViewdidSelec(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath ,withData data: LACollectionViewCellModel) -> Void
     {
+        let detaliView:detaliViewColntroller = detaliViewColntroller()
         
+        self.navigationController?.pushViewController(detaliView, animated: false)
     }
-    
-    
 }
 
