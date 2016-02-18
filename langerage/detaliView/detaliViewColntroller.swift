@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 import UIKit
 import pop
 
@@ -23,6 +24,15 @@ class detaliViewColntroller: UIViewController {
     
     var detaliList:NSArray = []
     
+    var audioPlayer = AVAudioPlayer()
+    
+    let db = LASQLite.sharedInstance
+    
+    let letfButton: UIButton = UIButton()
+
+    let ringhtButton: UIButton = UIButton()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +40,7 @@ class detaliViewColntroller: UIViewController {
         numberOfCards = UInt(detaliList.count)
         
         detaliView.frame = CGRectMake(0, ScreenTabelBarHeight, ScreenWidth, ScreenHeight)
+        
         detaliView.alphaValueSemiTransparent = kolodaAlphaValueSemiTransparent
         detaliView.countOfVisibleCards = kolodaCountOfVisibleCards
         detaliView.delegate = self
@@ -38,14 +49,48 @@ class detaliViewColntroller: UIViewController {
         
         self.view.addSubview(detaliView)
         detaliView.backgroundColor = UIColor.yellowColor()
-
+        
+        letfButton.setImage(UIImage(named: "ic_like"), forState: UIControlState.Normal)
+        letfButton.addTarget(self, action: "playActionClick", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(letfButton)
+        
+        letfButton.snp_makeConstraints { (make) -> Void in
+            
+            make.width.height.equalTo(100)
+            make.top.equalTo(350)
+            make.bottom.equalTo(150)
 
         }
+        
+        ringhtButton.setImage(UIImage(named: "ic_skip"), forState: UIControlState.Normal)
+        ringhtButton.addTarget(self, action: "nextActionClick", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(ringhtButton)
+        
+        ringhtButton.snp_makeConstraints { (make) -> Void in
+            
+            make.width.height.equalTo(100)
+            make.right.lessThanOrEqualTo(self.view)
+            make.top.equalTo(350)
+            make.bottom.equalTo(150)
+            
+        }
+
+    }
     
+    func playActionClick(){
+        
+        detaliView?.swipe(SwipeResultDirection.Left)
+
+    }
+    
+    func nextActionClick(){
+        
+        detaliView?.swipe(SwipeResultDirection.Right)
+        
+    }
     
     
     func loadData(){
-        let db = LASQLite.sharedInstance
         detaliList =  db.getDetaliList(1, languageID: 8)
         
     }
@@ -61,7 +106,20 @@ extension detaliViewColntroller:KolodaViewDelegate{
     }
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
-//        UIApplication.sharedApplication().openURL(NSURL(string: "http://yalantis.com/")!)
+        
+        let languageModel : LAModel = detaliList.objectAtIndex(Int(index)) as! LAModel
+        
+        let soundData  =  db.soundWintLanguage(languageModel.languageID!, phraseID:languageModel.phraseID! )
+        
+        do {
+            
+            audioPlayer = try AVAudioPlayer(data: soundData)
+            
+        } catch _ as NSError {
+            
+        }
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
     }
     
     func koloda(kolodaShouldApplyAppearAnimation koloda: KolodaView) -> Bool {
@@ -109,9 +167,12 @@ extension detaliViewColntroller:KolodaViewDataSource{
                 
         label.backgroundColor = UIColor.greenColor()
         
+//        let KolodaView :detaliKolodaView = detaliKolodaView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
+//        KolodaView.backImageView = UIImageView(image: UIImage(named: "cards_\((index + 1)%5)"))
+//        KolodaView.backImageView.image =  UIImage(named: "cards_\((index + 1)%5)")
         let image : UIImageView = UIImageView(image: UIImage(named: "cards_\((index + 1)%5)"))
         
-        image.addSubview(label)
+//        KolodaView.addSubview(UIImageView(image: UIImage(named: "cards_\((index + 1)%5)")))
         
         return image
     }

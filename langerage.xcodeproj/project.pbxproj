@@ -29,6 +29,8 @@
 		1C07C8E01C6732970067876A /* POPVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1C07C8C71C6732970067876A /* POPVector.mm */; };
 		1C07C8E11C6732970067876A /* TransformationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C07C8CA1C6732970067876A /* TransformationMatrix.cpp */; };
 		1C07C8E31C67378B0067876A /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C07C8E21C67378B0067876A /* CustomKolodaView.swift */; };
+		1C0A172D1C749BC1000707EE /* DetaliKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A172C1C749BC1000707EE /* DetaliKolodaView.swift */; };
+		1C0A172F1C74A732000707EE /* DetaliKolodaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0A172E1C74A732000707EE /* DetaliKolodaView.xib */; };
 		1C44009A1C673C6F00767F8F /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4400991C673C6F00767F8F /* CustomOverlayView.swift */; };
 		1C44009C1C68715100767F8F /* LAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44009B1C68715100767F8F /* LAModel.swift */; };
 		1CFFB8281C65EE04007695D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFFB8271C65EE04007695D1 /* AppDelegate.swift */; };
@@ -125,6 +127,8 @@
 		1C07C8CB1C6732970067876A /* TransformationMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformationMatrix.h; sourceTree = "<group>"; };
 		1C07C8CC1C6732970067876A /* UnitBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitBezier.h; sourceTree = "<group>"; };
 		1C07C8E21C67378B0067876A /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
+		1C0A172C1C749BC1000707EE /* DetaliKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetaliKolodaView.swift; sourceTree = "<group>"; };
+		1C0A172E1C74A732000707EE /* DetaliKolodaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetaliKolodaView.xib; path = XIB/DetaliKolodaView.xib; sourceTree = "<group>"; };
 		1C4400991C673C6F00767F8F /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		1C44009B1C68715100767F8F /* LAModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAModel.swift; sourceTree = "<group>"; };
 		1CFFB8241C65EE04007695D1 /* langerage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = langerage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +319,7 @@
 				1CFFB8761C66E77D007695D1 /* detaliView */,
 				1CFFB86B1C66E745007695D1 /* baseObject */,
 				1CFFB82B1C65EE04007695D1 /* Main.storyboard */,
+				1C0A172E1C74A732000707EE /* DetaliKolodaView.xib */,
 				1CFFB82E1C65EE04007695D1 /* Assets.xcassets */,
 				1CFFB8301C65EE04007695D1 /* LaunchScreen.storyboard */,
 				1CFFB8331C65EE04007695D1 /* Info.plist */,
@@ -371,6 +376,7 @@
 				1CFFB8771C670F10007695D1 /* detaliViewColntroller.swift */,
 				1C07C8E21C67378B0067876A /* CustomKolodaView.swift */,
 				1C4400991C673C6F00767F8F /* CustomOverlayView.swift */,
+				1C0A172C1C749BC1000707EE /* DetaliKolodaView.swift */,
 			);
 			path = detaliView;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 				1CFFB8611C66274B007695D1 /* useradded.sqlite in Resources */,
 				1CFFB82F1C65EE04007695D1 /* Assets.xcassets in Resources */,
 				1CFFB85E1C66274B007695D1 /* audio.sqlite3 in Resources */,
+				1C0A172F1C74A732000707EE /* DetaliKolodaView.xib in Resources */,
 				1CFFB82D1C65EE04007695D1 /* Main.storyboard in Resources */,
 				1CFFB8601C66274B007695D1 /* phonetics.sqlite in Resources */,
 			);
@@ -587,6 +594,7 @@
 				1C07C8D71C6732970067876A /* POPBasicAnimation.mm in Sources */,
 				1C07C8E01C6732970067876A /* POPVector.mm in Sources */,
 				1C07C8D01C6732970067876A /* POPAnimatableProperty.mm in Sources */,
+				1C0A172D1C749BC1000707EE /* DetaliKolodaView.swift in Sources */,
 				1C07C8DC1C6732970067876A /* POPLayerExtras.mm in Sources */,
 				1C44009A1C673C6F00767F8F /* CustomOverlayView.swift in Sources */,
 				1C07C8D11C6732970067876A /* POPAnimation.mm in Sources */,

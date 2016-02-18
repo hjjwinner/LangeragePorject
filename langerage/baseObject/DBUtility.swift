@@ -33,7 +33,7 @@ class LASQLite {
     
     let audioTable = Table("audio")///<语音table
 
-    let audio_file = Expression<String>("audio_file")///<
+    let audio_file = Expression<SQLite.Blob>("audio_file")///<
 
     
 
@@ -153,14 +153,11 @@ class LASQLite {
         return String("")
     }
     
-    
-    
-    
-    
-    
-    
+
     ///获取播放语音
-    func soundWintLanguage(languageID:Int64, phraseID:Int64){
+    func soundWintLanguage(languageID:Int64, phraseID:Int64)->NSData{
+        
+        var audioData : NSData = NSData()
         
         do {
             
@@ -172,6 +169,9 @@ class LASQLite {
             for row in try LADB.prepare(audioTable.select(audio_file).filter(language_id == languageID).filter(phrase_id == phraseID)) {
                 print("audio_file =\(row[audio_file])")
                 
+                 audioData  = NSData.fromDatatypeValue(row[audio_file])
+                
+                return audioData
                 
             }
             
@@ -179,11 +179,9 @@ class LASQLite {
             
         }
         
+        return audioData
         
     }
-    
-
-
 
     
 }
