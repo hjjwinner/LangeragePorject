@@ -34,6 +34,8 @@ class LATabBarController:UITabBarController {
             if intdex%2 == 1{
                 if intdex == 1{
                     VC = ViewController()
+                }else if intdex == 5{
+                    VC = userCenterController()
                 }else{
                     VC.view.backgroundColor = UIColor.grayColor()
                 }

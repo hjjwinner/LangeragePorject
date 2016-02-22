@@ -32,8 +32,15 @@ class LASQLite {
     let phrase = Expression<String>("phrase")///<
     
     let audioTable = Table("audio")///<语音table
-
     let audio_file = Expression<SQLite.Blob>("audio_file")///<
+    
+    
+    let nativeLanguageTable = Table("native_language")///<语言列表
+    let language_code = Expression<String>("language_code")///<语言code
+    let feminine_id = Expression<Int64>("feminine_id")///<
+    let itef_tag = Expression<Int64>("itef_tag")///<
+    let language_name = Expression<String>("language_name")///<
+
 
     
 
@@ -77,7 +84,7 @@ class LASQLite {
     
     
     ///获取详情列表对应ID
-    func getDetaliList(categoryID:Int64,languageID:Int64)->NSArray{
+    func getDetaliList(categoryID:Int64,languageID:Int64,toLanguageID:Int64)->NSArray{
         let categoryList : NSMutableArray = []
         
         do{
@@ -95,6 +102,8 @@ class LASQLite {
                 
                 
                 languageModel.languageID = languageID
+                
+                languageModel.toLanguageID = toLanguageID
 
                 
                 if needfilter != 1 {
@@ -102,6 +111,8 @@ class LASQLite {
                     languageModel.phraseID = row[phrase_id]
                     
                     languageModel.phrase = self.getPhraseString(languageID, phraseID:row[phrase_id]) as String
+                    languageModel.toPhrase = self.getPhraseString(toLanguageID, phraseID:row[phrase_id]) as String
+
 //                    self.soundWintLanguage(languageID, phraseID:row[phrase_id])
                     categoryList.addObject(languageModel)
                     needFilterRow = 0
@@ -112,6 +123,8 @@ class LASQLite {
                         
                         languageModel.phraseID = row[phrase_id]
                         languageModel.phrase = self.getPhraseString(languageID, phraseID:row[phrase_id]) as String
+                        languageModel.toPhrase = self.getPhraseString(toLanguageID, phraseID:row[phrase_id]) as String
+
                         categoryList.addObject(languageModel)
                         
                     }
@@ -130,7 +143,7 @@ class LASQLite {
         return categoryList
     }
     
-    
+    ///<获取对话文字
     func getPhraseString(languageID:Int64, phraseID:Int64)->NSString{
         
         do{
@@ -152,6 +165,65 @@ class LASQLite {
         
         return String("")
     }
+    
+    ///语言国家国旗图片
+    func getLanguageCode(languageID:Int64)->String{
+        do{
+            let path = NSBundle.mainBundle().pathForResource("lingopal", ofType: "sqlite3")!
+            
+            let LADB = try Connection(path, readonly: true)
+            
+            
+            for rowData in try LADB.prepare(nativeLanguageTable.select(language_code).filter(language_id == languageID)) {
+                
+                
+                return String( rowData[language_code])
+                
+            }
+            
+        }catch{
+            
+        }
+        
+        return String("")
+
+    }
+    
+    func countryList()->NSArray{
+        
+        let list : NSMutableArray = []
+        
+        do{
+            let path = NSBundle.mainBundle().pathForResource("lingopal", ofType: "sqlite3")!
+            
+            let LADB = try Connection(path, readonly: true)
+            
+            
+            for rowData in try LADB.prepare(nativeLanguageTable.select(language_code,feminine_id,itef_tag,language_name)) {
+                
+                let model : UserLanguageModel = UserLanguageModel()
+                
+                model.language_code = rowData[language_code]
+                model.feminine_id = rowData[feminine_id]
+                model.itef_tag = rowData[itef_tag]
+                model.language_name = rowData[language_name]
+                
+                print(model.language_code,model.language_name,model.itef_tag,model.language_name)
+                
+                
+                list.addObject(model)
+
+                
+            }
+            
+        }catch{
+            
+        }
+
+        return list
+        
+    }
+    
     
 
     ///获取播放语音

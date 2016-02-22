@@ -91,7 +91,7 @@ class detaliViewColntroller: UIViewController {
     
     
     func loadData(){
-        detaliList =  db.getDetaliList(1, languageID: 8)
+        detaliList =  db.getDetaliList(1, languageID: 8,toLanguageID: 3)
         
     }
     
@@ -109,7 +109,7 @@ extension detaliViewColntroller:KolodaViewDelegate{
         
         let languageModel : LAModel = detaliList.objectAtIndex(Int(index)) as! LAModel
         
-        let soundData  =  db.soundWintLanguage(languageModel.languageID!, phraseID:languageModel.phraseID! )
+        let soundData  =  db.soundWintLanguage(languageModel.toLanguageID!, phraseID:languageModel.phraseID! )
         
         do {
             
@@ -153,19 +153,41 @@ extension detaliViewColntroller:KolodaViewDataSource{
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
         
-        let label : UILabel = UILabel()
+        let labelLanguage1 : UILabel = UILabel()
         
-        label.frame = CGRectMake(0, 0, 300, 100)
         
         if self.detaliList.count > 0 {
             
             let detaliModel :LAModel = self.detaliList.objectAtIndex(Int(index)) as! LAModel
             
-            label.text = detaliModel.phrase
-            print(label.text)
+            labelLanguage1.text = detaliModel.phrase
+            
+            print(labelLanguage1.text)
         }
                 
-        label.backgroundColor = UIColor.greenColor()
+        labelLanguage1.backgroundColor = UIColor.greenColor()
+        
+        ///<tolanguage
+        let labelLanguage2 : UILabel = UILabel()
+        
+        
+        if self.detaliList.count > 0 {
+            
+            let detaliModel :LAModel = self.detaliList.objectAtIndex(Int(index)) as! LAModel
+            
+            labelLanguage2.text = detaliModel.toPhrase
+            
+            print(labelLanguage2.text)
+        }
+        
+
+        
+        labelLanguage2.backgroundColor = UIColor.brownColor()
+        
+        let imageString = db.getLanguageCode(8)
+        
+        let colours:UIImageView = UIImageView(image: UIImage(named: imageString))
+        
         
 //        let KolodaView :detaliKolodaView = detaliKolodaView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
 //        KolodaView.backImageView = UIImageView(image: UIImage(named: "cards_\((index + 1)%5)"))
@@ -173,6 +195,28 @@ extension detaliViewColntroller:KolodaViewDataSource{
         let image : UIImageView = UIImageView(image: UIImage(named: "cards_\((index + 1)%5)"))
         
 //        KolodaView.addSubview(UIImageView(image: UIImage(named: "cards_\((index + 1)%5)")))
+        
+        image.addSubview(labelLanguage1)
+        image.addSubview(labelLanguage2)
+        image.addSubview(colours)
+        
+        labelLanguage1.snp_makeConstraints { (make) -> Void in
+            make.left.top.equalTo(20)
+            make.right.equalTo(-20)
+        }
+
+        labelLanguage2.snp_makeConstraints { (make) -> Void in
+            make.size.equalTo(labelLanguage1)
+            make.left.equalTo(20)
+            make.top.equalTo(labelLanguage1.snp_bottom).offset(20)
+            
+        }
+        
+        colours.snp_makeConstraints { (make) -> Void in
+            make.size.equalTo((colours.image?.size)!)
+            make.top.equalTo(100)
+            make.left.equalTo(20)
+        }
         
         return image
     }

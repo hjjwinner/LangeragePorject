@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 let ScreenWidth = UIScreen.mainScreen().bounds.size.width
 /// 高
 let ScreenHeight  = UIScreen.mainScreen().bounds.size.height
